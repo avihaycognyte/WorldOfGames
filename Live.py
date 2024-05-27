@@ -1,4 +1,6 @@
-#for dev branch
+# Add this line at the beginning of Live.py
+from GuessGame import GuessGame  # Import the GuessGame class
+
 def welcome(name):
   """
   This function greets a person by name and welcomes them to the World of Games (WoG).
@@ -42,6 +44,7 @@ def load_game():
       if difficulty_level not in range(1, 6):
         raise ValueError("Invalid difficulty level. Please enter a number between 1 and 5.")
       break
+      print(f"Difficulty level {difficulty_level} selected.")  # Added message for user feedback
     except ValueError as e:
       print(e)
 
@@ -64,9 +67,12 @@ if game_choice == 1:
   # Implement Memory Game logic here
 elif game_choice == 2:
   print("Starting Guess Game...")
-  # Implement Guess Game logic here
+  # Create an instance of GuessGame and call its play method
+  guess_game = GuessGame(difficulty_level)
+  if guess_game.play():
+    print("You won!")
+  else:
+    print("You lost. The secret number was", guess_game.secret_number)
 elif game_choice == 3:
   print("Starting Currency Roulette...")
   # Implement Currency Roulette logic here
-
-
