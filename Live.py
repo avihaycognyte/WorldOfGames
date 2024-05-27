@@ -1,3 +1,4 @@
+#for dev branch
 def welcome(name):
   """
   This function greets a person by name and welcomes them to the World of Games (WoG).
@@ -67,4 +68,5 @@ elif game_choice == 2:
 elif game_choice == 3:
   print("Starting Currency Roulette...")
   # Implement Currency Roulette logic here
+
 
